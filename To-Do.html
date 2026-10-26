@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daylight — To‑Do</title>
+  <link rel="stylesheet" href="To-Do.css">
+</head>
+
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">✓</span> daylight<span style="font-weight:500;opacity:.72">.</span>
+      </div>
+      <div class="top-right"><span>Make today count.</span><span class="date-pill" id="datePill"></span></div>
+    </header>
+    <section class="hero">
+      <div class="eyebrow">Your space to focus</div>
+      <h1>Small steps.<br>Big progress.</h1>
+      <p>A little clarity goes a long way. What's on your mind today?</p>
+    </section>
+    <div class="app">
+      <aside class="sidebar">
+        <div class="side-label" style="width:100%">WORKSPACE</div>
+        <button class="nav active" data-filter="all"><span class="ico">▦</span> All tasks <span class="count"
+            id="allCount">0</span></button>
+        <button class="nav" data-filter="today"><span class="ico">◷</span> Today <span class="count"
+            id="todayCount">0</span></button>
+        <button class="nav" data-filter="upcoming"><span class="ico">▣</span> Upcoming</button>
+        <button class="nav" data-filter="completed"><span class="ico">✓</span> Completed</button>
+        <div class="sidebar-bottom" style="width:100%">
+          <div class="mini-title">Your daily progress ✨</div>
+          <div class="progress-row"><span id="progressLabel">Just getting started</span><strong
+              id="progressPercent">0%</strong></div>
+          <div class="progress"><span id="progressBar"></span></div>
+        </div>
+      </aside>
+      <main class="main-card">
+        <div class="main-head">
+          <div>
+            <h2 id="listTitle">All tasks</h2>
+            <div class="subtitle" id="listSubtitle">Everything you want to get done, in one place.</div>
+          </div>
+          <div class="today-badge" id="dateBadge">✦ Make it happen</div>
+        </div>
+        <form class="add-form" id="addForm">
+          <input class="field task-input" id="taskInput" maxlength="180" placeholder="What needs to get done?" required
+            aria-label="Task name">
+          <select class="field" id="priority" aria-label="Priority">
+            <option value="medium">◉ Medium</option>
+            <option value="high">↑ High</option>
+            <option value="low">↓ Low</option>
+          </select>
+          <input class="field" id="dueDate" type="date" aria-label="Due date">
+          <button class="add-btn" type="submit"><span>＋</span> Add task</button>
+        </form>
+        <div class="tools">
+          <div class="search-wrap"><span class="search-icon">⌕</span><input class="field" id="searchInput"
+              placeholder="Search your tasks..." aria-label="Search tasks"></div>
+          <select class="field sort-select" id="sortSelect" aria-label="Sort tasks">
+            <option value="created">Sort: Added</option>
+            <option value="due">Sort: Due date</option>
+            <option value="priority">Sort: Priority</option>
+            <option value="alpha">Sort: A–Z</option>
+          </select>
+        </div>
+        <div class="list-meta"><span id="taskSummary">0 tasks</span><span>Click the circle to complete</span></div>
+        <div class="task-list" id="taskList"></div>
+        <div class="bottom-row"><span id="remainingText">You're all caught up.</span><button class="text-btn"
+            id="clearCompleted">Clear completed</button></div>
+      </main>
+    </div>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="To-Do.js"></script>
+</body>
+
+</html>
